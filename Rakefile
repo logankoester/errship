@@ -18,9 +18,10 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/logankoester/errship"
   gem.license = "MIT"
   gem.summary = %Q{Common exception handlers and error page styles for Agora applications}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{Common exception handlers and error page styles for Agora applications}
   gem.email = "lkoester@agoragames.com"
   gem.authors = ["Logan Koester"]
+  gem.files = Dir["{lib}/**/*", "{app}/**/*", "{config}/**/*", "{public}/**/*"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
