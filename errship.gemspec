@@ -17,14 +17,13 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
-    "app/controllers/application_controller.rb",
-    "app/controllers/error_controller.rb",
-    "app/views/error/standard.html.haml",
+    "app/views/errship/standard.html.haml",
     "config/routes.rb",
     "lib/errship.rb",
     "public/404.html",
     "public/422.html",
-    "public/500.html"
+    "public/500.html",
+    "public/images/backgrounds/hamster-wheel.png"
   ]
   s.homepage = %q{http://github.com/logankoester/errship}
   s.licenses = ["MIT"]
