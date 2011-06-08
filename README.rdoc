@@ -1,6 +1,28 @@
-= errship
+= => errship
 
-Description goes here.
+Common exception handlers and error page styles for Agora applications.
+
+Dynamic error pages will be rendered into the :left_col block in your layout.
+
+== Installation
+
+Add this to your Gemfile
+  gem 'errship', :git => 'git@github.com:agoragames/errship.git'
+
+Add this to your ApplicationController
+  class ApplicationController < ActionController::Base
+    include Errship::Rescuers
+
+== Custom Rescuers
+
+If you want to add your own rescue_from lines for exception classes specific to 
+your application, you can utilize the following methods.
+
+* render_error(exception) # Render the 500 page
+* render_404_error(exception = nil) # Render the 404 page
+* flashback(error_message) # Set the flash and redirect back (RedirectBackError-safe)
+
+Every rescuer will report the exception to Hoptoad, except 404.
 
 == Contributing to errship
  
