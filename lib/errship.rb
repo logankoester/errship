@@ -45,8 +45,8 @@ module Errship
     # Set the error flash and attempt to redirect back. If RedirectBackError is raised,
     # redirect to error_path instead.
     def flashback(error_message)
-      HoptoadNotifier.notify(exception)
-      flash[:error] = 'An error occurred with our video provider. This issue has been reported - sorry about that!'
+      HoptoadNotifier.notify(exception) if defined?(HoptoadNotifier)
+      flash[:error] = error_message
       begin
         redirect_to :back
       rescue ActionController::RedirectBackError

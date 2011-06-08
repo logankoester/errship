@@ -15,6 +15,8 @@ end
 
 group :test do
   gem 'rails', '3.0.7'
+  gem 'sqlite3'
+  gem 'turn'
 end
 
 gem 'haml'

@@ -12,7 +12,9 @@ require 'shoulda'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'errship'
 
-class Test::Unit::TestCase
-end
+
+# Run the tests for the sandbox (dummy) application
+ENV['RAILS_ENV'] = 'test'
+require 'sandbox/config/environment'
+require 'rails/test_help'
