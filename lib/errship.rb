@@ -14,7 +14,7 @@ module Errship
 
   module Rescuers
     def self.included(base)
-      unless base.config.consider_all_requests_local
+      unless Rails.application.config.consider_all_requests_local
         base.rescue_from Exception, :with => :render_error
         base.rescue_from ActiveRecord::RecordNotFound, :with => :render_404_error
         base.rescue_from ActionController::RoutingError, :with => :render_404_error
