@@ -1,7 +1,7 @@
 require 'haml'
 
 module Errship
-  class Engine < Rails::Engine
+  class Engine < ::Rails::Engine
     paths.app.routes = 'config/routes.rb'
     paths.app.views = 'app/views'
 

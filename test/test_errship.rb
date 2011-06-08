@@ -1,7 +1,8 @@
-require 'helper'
+require 'test_helper'
 
 class TestErrship < Test::Unit::TestCase
-  should "probably rename this file and start testing for real" do
-    flunk "hey buddy, you should probably rename this file and start testing for real"
+  
+  def test_errship_is_a_module
+    assert_kind_of Module, Errship
   end
 end
