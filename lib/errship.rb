@@ -22,7 +22,7 @@ module Errship
         base.rescue_from ActionController::UnknownAction, :with => :render_404_error
       end
     end
-    
+
     def render_error(exception)
       HoptoadNotifier.notify(exception) if defined?(HoptoadNotifier)
 
@@ -31,15 +31,10 @@ module Errship
     end
 
     def render_404_error(exception = nil)
-      
-      # Workaround pre-Rails 3.1 for rescue_from RoutingError
-      # A catchall route ends up here with params[:address] as the unknown route
-      exception = ActionController::RoutingError.new(%(No route matches "/#{params[:address]}")) if params[:address]
-
       @page_title = 'Page Not Found'
       render :template => '/errship/standard', :locals => { :status_code => 404 }
     end
-    
+
     # A blank page with just the layout and flash message, which can be redirected to when
     # all else fails.
     def errship_standard
