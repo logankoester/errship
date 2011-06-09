@@ -5,10 +5,8 @@ module Errship
     paths.app.routes = 'config/routes.rb'
     paths.app.views = 'app/views'
 
-    # This method may have issues when an assets server is in use
-    # (production) on pre-Rails3.1 applications.
     initializer 'errship_assets' do |app|
-      app.middleware.insert_before ::ActionDispatch::Static, ::ActionDispatch::Static, "#{root}/public"
+      app.middleware.insert_before ::Rack::Lock, ::ActionDispatch::Static, "#{root}/public"
     end
   end
 
