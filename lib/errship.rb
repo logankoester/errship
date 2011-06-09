@@ -4,10 +4,6 @@ module Errship
   class Engine < ::Rails::Engine
     paths.app.routes = 'config/routes.rb'
     paths.app.views = 'app/views'
-
-    initializer 'errship_assets' do |app|
-      app.middleware.insert_before ::Rack::Lock, ::ActionDispatch::Static, "#{root}/public"
-    end
   end
 
   module Rescuers
