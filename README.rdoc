@@ -1,28 +1,82 @@
 = => errship
 
-Common exception handlers and error page styles for Agora applications.
+The static error pages Rails comes with are nice for getting started - you can't
+break them, no matter what. But without your layout and navigation wrapped around
+them, they create a frustrating trap for your users.
 
-Dynamic error pages will be rendered into the :left_col block in your layout.
+The obvious solution is to render your layout into the static file, but what happens
+when you make a change?
+
+Worse, what if you run a network of many Rails applications? Should they share one
+error page style? Should they all have their own?
+
+You could hire your nephew to keep them all up to date... or you can use Errship.
+
+Errship is a Rails 3.1 engine for rendering error pages inside your layout. It supports
+i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.
+
+You can also use the flashback method to set an error message and redirect :back safely - if
+a RedirectBackError is raised, the user is dropped off at the nearest error page and given 
+the flash message anyway.
 
 == Installation
 
 Add this to your Gemfile
-  gem 'errship', :git => 'git@github.com:agoragames/errship.git'
+    gem 'errship', :git => 'git@github.com:agoragames/errship.git'
 
 Add this to your ApplicationController
-  class ApplicationController < ActionController::Base
-    include Errship::Rescuers
+    class ApplicationController < ActionController::Base
+      include Errship::Rescuers
+
+Errship is ready to go! To test it out in development, you'll need to set
+
+    config.consider_all_requests_local = false
+
+in your config/environments/development.rb file. Just don't forget to change it back
+when you want useful debugging output again instead!
 
 == Custom Rescuers
 
-If you want to add your own rescue_from lines for exception classes specific to 
-your application, you can utilize the following methods.
+If you want errship to rescue errors from your own custom exception class, you need
+to add a custom rescuer in your ApplicationController, like so:
+
+    # Render the 404 page
+    rescue_from MyException::SomethingMissing, :with => :render_404_error
+
+    # Render the 500 page
+    rescue_from MyException::SomethingWentWrong, :with => :render_error
+
+The following methods are provided:
 
 * render_error(exception) # Render the 500 page
 * render_404_error(exception = nil) # Render the 404 page
 * flashback(error_message) # Set the flash and redirect back (RedirectBackError-safe)
 
-Every rescuer will report the exception to Hoptoad, except 404.
+If Airbrake is installed, every rescuer will report the exception, except for 404.
+
+== i18n
+
+If you want to edit the text that is rendered, add the following to your config/locales/*.yml
+
+    en:
+      errship:
+        '404':
+          title: 'This page does not exist.'
+          description: 'It could have moved, or someone (maybe you!) mistyped the URL.'
+        '500':
+          title: 'An error has occurred.'
+          description: 'This has been reported to our development team. Thank you!'
+
+...and so forth, for any error code you like.
+
+== Changelog
+
+1.0.0
+  - Upgrade to Rails 3.1 to share error page assets between applications on the asset pipeline.
+  - Supports Airbrake as well as HoptoadNotifier
+  - Errors are rendered directly into your layout
+  - i18n support
+  - No default styles - blends seamlessly into its host layout.
 
 == Contributing to errship
  
