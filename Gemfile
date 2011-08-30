@@ -14,8 +14,8 @@ group :development do
 end
 
 group :test do
-  gem 'rails', '3.0.7'
-  gem 'sqlite3'
+  gem 'rails', '3.1.0rc8'
+  gem 'sqlite3-ruby'
   gem 'turn'
 end
 
