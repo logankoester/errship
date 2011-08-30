@@ -36,6 +36,9 @@ GEM
       activesupport (= 3.1.0.rc8)
     activesupport (3.1.0.rc8)
       multi_json (~> 1.0)
+    airbrake (3.0.2)
+      activesupport
+      builder
     arel (2.2.1)
     bcrypt-ruby (3.0.0)
     builder (3.0.0)
@@ -94,6 +97,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   errship!
   rails (= 3.1.0rc8)
   sqlite3-ruby

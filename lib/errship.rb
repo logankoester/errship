@@ -19,7 +19,7 @@ module Errship
     end
 
     def render_error(exception)
-      HoptoadNotifier.notify(exception) if defined?(HoptoadNotifier)
+      airbrake_class.send(:notify, exception) if airbrake_class
 
       @page_title = 'Internal Server Error'
       render :template => '/errship/standard', :locals => { :status_code => 500 }
@@ -40,13 +40,20 @@ module Errship
     # Set the error flash and attempt to redirect back. If RedirectBackError is raised,
     # redirect to error_path instead.
     def flashback(error_message, exception = nil)
-      HoptoadNotifier.notify(exception) if defined?(HoptoadNotifier) && exception
+      airbrake_class.send(:notify, exception) if airbrake_class
       flash[:error] = error_message
       begin
         redirect_to :back
       rescue ActionController::RedirectBackError
         redirect_to error_path
       end
+    end
+
+  private
+    def airbrake_class
+      return Airbrake if defined?(Airbrake)
+      return HoptoadNotifier if defined?(HoptoadNotifier)
+      return false
     end
 
   end
