@@ -1,0 +1,8 @@
+en:
+  errship:
+    '404':
+      title: 'This page does not exist.'
+      description: 'It could have moved, or someone (maybe you!) mistyped the URL.'
+    '500':
+      title: 'An error has occurred.'
+      description: 'This has been reported to our development team. Thank you!'
