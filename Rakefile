@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "errship"
   gem.homepage = "http://github.com/logankoester/errship"
   gem.license = "MIT"
-  gem.summary = %Q{Common exception handlers and error page styles for Agora applications}
-  gem.description = %Q{Common exception handlers and error page styles for Agora applications}
+  gem.summary = %Q{Errship is a Rails 3.1 engine for rendering error pages inside your layout.}
+  gem.description = %Q{Errship is a Rails 3.1 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.}
   gem.email = "lkoester@agoragames.com"
   gem.authors = ["Logan Koester"]
   gem.files = Dir["{lib}/**/*", "{app}/**/*", "{config}/**/*", "{public}/**/*"]

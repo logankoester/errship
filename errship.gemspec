@@ -5,19 +5,22 @@
 
 Gem::Specification.new do |s|
   s.name = %q{errship}
-  s.version = "0.3.2"
+  s.version = "1.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Logan Koester"]
-  s.date = %q{2011-08-29}
-  s.description = %q{Common exception handlers and error page styles for Agora applications}
+  s.date = %q{2011-08-30}
+  s.description = %q{Errship is a Rails 3.1 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.}
   s.email = %q{lkoester@agoragames.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
   ]
   s.files = [
+    "app/assets/javascripts/application.js",
+    "app/assets/stylesheets/errship.css",
     "app/views/errship/standard.html.haml",
+    "config/locales/en.yml",
     "config/routes.rb",
     "lib/errship.rb"
   ]
@@ -25,7 +28,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
-  s.summary = %q{Common exception handlers and error page styles for Agora applications}
+  s.summary = %q{Errship is a Rails 3.1 engine for rendering error pages inside your layout.}
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
