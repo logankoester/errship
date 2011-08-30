@@ -35,7 +35,7 @@ Errship is ready to go! To test it out in development, you'll need to set
 in your config/environments/development.rb file. Just don't forget to change it back
 when you want useful debugging output again instead!
 
-Alternatively, simply point your browser to /error or /404 to get a taste.
+Alternatively, simply point your browser to /error or /not_found to get a taste.
 
 == Custom Rescuers
 
