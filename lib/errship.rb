@@ -18,23 +18,23 @@ module Errship
       end
     end
 
-    def render_error(exception)
+    def render_error(exception, errship_scope = false)
       airbrake_class.send(:notify, exception) if airbrake_class
-
-      @page_title = 'Internal Server Error'
-      render :template => '/errship/standard', :locals => { :status_code => 500 }
+      render :template => '/errship/standard', :locals => { 
+        :status_code => 500, :errship_scope => errship_scope }
     end
 
-    def render_404_error(exception = nil)
-      @page_title = 'Page Not Found'
-      render :template => '/errship/standard', :locals => { :status_code => 404 }
+    def render_404_error(exception = nil, errship_scope = false)
+      render :template => '/errship/standard', :locals => { 
+        :status_code => 404, :errship_scope => errship_scope }
     end
 
     # A blank page with just the layout and flash message, which can be redirected to when
     # all else fails.
-    def errship_standard
+    def errship_standard(errship_scope = false)
       flash[:error] ||= 'An unknown error has occurred, or you have reached this page by mistake.'
-      render :template => 'errship/standard', :locals => { :status_code => 500 }
+      render :template => '/errship/standard', :locals => { 
+        :status_code => 500, :errship_scope => errship_scope }
     end
 
     # Set the error flash and attempt to redirect back. If RedirectBackError is raised,

@@ -3,5 +3,9 @@
 
 .errship
   %h1.error_code #{status_code}
-  %h2= t "errship.#{status_code}.title" 
-  %p= t  "errship.#{status_code}.description"
+  - if errship_scope
+    %h2= t "errship.#{status_code}.#{errship_scope}.title" 
+    %p= t  "errship.#{status_code}.#{errship_scope}.description"
+  - else
+    %h2= t "errship.#{status_code}.title" 
+    %p= t  "errship.#{status_code}.description"

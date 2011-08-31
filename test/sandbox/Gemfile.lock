@@ -1,7 +1,7 @@
 PATH
   remote: ../../
   specs:
-    errship (0.3.2)
+    errship (1.0.0)
       haml
 
 GEM
