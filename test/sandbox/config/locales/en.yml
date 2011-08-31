@@ -3,3 +3,8 @@
 
 en:
   hello: "Hello world"
+  errship:
+    '404':
+      brainless:
+        title: 'No brains here.'
+        description: 'Insanity has taken hold.'

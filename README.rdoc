@@ -37,26 +37,7 @@ when you want useful debugging output again instead!
 
 Alternatively, simply point your browser to /error or /not_found to get a taste.
 
-== Custom Rescuers
-
-If you want errship to rescue errors from your own custom exception class, you need
-to add a custom rescuer in your ApplicationController, like so:
-
-    # Render the 404 page
-    rescue_from MyException::SomethingMissing, :with => :render_404_error
-
-    # Render the 500 page
-    rescue_from MyException::SomethingWentWrong, :with => :render_error
-
-The following methods are provided:
-
-* render_error(exception) # Render the 500 page
-* render_404_error(exception = nil) # Render the 404 page
-* flashback(error_message) # Set the flash and redirect back (RedirectBackError-safe)
-
-If Airbrake is installed, every rescuer will report the exception, except for 404.
-
-== i18n
+== I18n
 
 If you want to edit the text that is rendered, add the following to your config/locales/*.yml
 
@@ -71,7 +52,46 @@ If you want to edit the text that is rendered, add the following to your config/
 
 ...and so forth, for any error code you like.
 
+== Custom Rescuers
+
+If you want errship to rescue errors from your own custom exception class, you need
+to add a custom rescuer in your ApplicationController, like so:
+
+    # Render the 404 page
+    rescue_from MyException::SomethingMissing, :with => :render_404_error
+
+    # Render the 500 page
+    rescue_from MyException::SomethingWentWrong, :with => :render_error
+
+To customize the error for a particular controller or exception class, add a rescuer
+like this one:
+
+    rescue_from ActiveRecord::RecordNotFound, :with => ->(e){ render_404_error e, 'monkeys' }
+
+and then add your text for that scope to config/locales/*.yml
+
+    en:
+      errship:
+        '404':
+          title: 'This page does not exist.'
+          description: 'It could have moved, or someone (maybe you!) mistyped the URL.'
+          monkeys:
+            title: 'They must have escaped'
+            description: 'This is now a monkey free zone.'
+            
+
+The following methods are provided:
+
+* render_error(exception, errship_scope = false) # Render the 500 page
+* render_404_error(exception = nil, errship_scope = false) # Render the 404 page
+* flashback(error_message) # Set the flash and redirect back (RedirectBackError-safe)
+
+If Airbrake is installed, every rescuer will report the exception, except for 404.
+
 == Changelog
+1.1.0
+  - Adds option to specify a custom errship_scope to use with I18n, allowing each 
+    rescuer to customize the messages displayed (on a per-controller basis).
 
 1.0.0
   - Upgrade to Rails 3.1 to share error page assets between applications on the asset pipeline.
