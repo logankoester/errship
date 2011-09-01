@@ -20,6 +20,6 @@ end
 class ErrshipIntegrationTest < ActionController::IntegrationTest
   test "/any_nonexistant_route is routed to errship's 404 page" do
     get '/any_nonexistant_route'
-    assert_equal 'Page Not Found', assigns(:page_title)
+    assert_routing '/error', { :controller => 'application', :action => 'errship_standard' }
   end
 end
