@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{errship}
-  s.version = "1.0.0"
+  s.version = "1.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Logan Koester"]
-  s.date = %q{2011-08-30}
+  s.date = %q{2011-09-01}
   s.description = %q{Errship is a Rails 3.1 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.}
   s.email = %q{lkoester@agoragames.com}
   s.extra_rdoc_files = [
