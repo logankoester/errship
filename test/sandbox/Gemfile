@@ -8,8 +8,9 @@ gem 'airbrake'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby'
+gem 'mongoid'
+gem 'mongo_mapper'
 gem 'bson_ext'
-gem 'mongoid', '>= 2.0.0.beta.19'
 
 # Use unicorn as the web server
 # gem 'unicorn'
