@@ -1,4 +1,7 @@
 require 'haml'
+require 'rescuers/active_record'
+require 'rescuers/mongoid'
+require 'rescuers/mongo_mapper'
 
 module Errship
   class Engine < ::Rails::Engine
@@ -11,7 +14,6 @@ module Errship
     def self.included(base)
       unless Rails.application.config.consider_all_requests_local
         base.rescue_from Exception, :with => :render_error
-        base.rescue_from ActiveRecord::RecordNotFound, :with => :render_404_error
         base.rescue_from ActionController::RoutingError, :with => :render_404_error
         base.rescue_from ActionController::UnknownController, :with => :render_404_error
         base.rescue_from ActionController::UnknownAction, :with => :render_404_error

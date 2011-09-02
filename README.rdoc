@@ -27,6 +27,7 @@ Add this to your Gemfile
 Add this to your ApplicationController
     class ApplicationController < ActionController::Base
       include Errship::Rescuers
+      include Errship::ActiveRecord::Rescuers # or replace 'ActiveRecord' with MongoMapper, or Mongoid
 
 Errship is ready to go! To test it out in development, you'll need to set
 
@@ -89,6 +90,9 @@ The following methods are provided:
 If Airbrake is installed, every rescuer will report the exception, except for 404.
 
 == Changelog
+2.0.0
+  - Breaks out ORM error handling into submodules. Not backwards compatible.
+
 1.1.0
   - Adds option to specify a custom errship_scope to use with I18n, allowing each 
     rescuer to customize the messages displayed.

@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{errship}
-  s.version = "1.1.0"
+  s.version = "2.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Logan Koester"]
@@ -22,7 +22,10 @@ Gem::Specification.new do |s|
     "app/views/errship/standard.html.haml",
     "config/locales/en.yml",
     "config/routes.rb",
-    "lib/errship.rb"
+    "lib/errship.rb",
+    "lib/rescuers/active_record.rb",
+    "lib/rescuers/mongo_mapper.rb",
+    "lib/rescuers/mongoid.rb"
   ]
   s.homepage = %q{http://github.com/logankoester/errship}
   s.licenses = ["MIT"]
