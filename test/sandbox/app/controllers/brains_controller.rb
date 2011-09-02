@@ -1,6 +1,6 @@
 class BrainsController < ApplicationController
-  rescue_from ActiveRecord::RecordNotFound, :with => ->(e){ render_404_error e, 'brainless' }
-
+  include Errship::ActiveRecord::Rescuers
+  
   def index
     raise ActiveRecord::RecordNotFound
   end

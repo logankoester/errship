@@ -90,6 +90,10 @@ The following methods are provided:
 If Airbrake is installed, every rescuer will report the exception, except for 404.
 
 == Changelog
+2.0.1
+  - Added tests for ActiveRecord, Mongoid and MongoMapper rescuers
+  - Fixed Mongoid module
+   
 2.0.0
   - Breaks out ORM error handling into submodules. Not backwards compatible.
 
