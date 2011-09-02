@@ -18,6 +18,8 @@ group :test do
   gem 'sqlite3-ruby'
   gem 'turn'
   gem 'mocha', :require => false
+  gem 'bson_ext'
+  gem 'mongoid', '>= 2.0.0.beta.19'
 end
 
 gem 'haml'

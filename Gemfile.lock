@@ -33,6 +33,8 @@ GEM
     ansi (1.2.5)
     arel (2.2.1)
     bcrypt-ruby (3.0.0)
+    bson (1.3.1)
+    bson_ext (1.3.1)
     builder (3.0.0)
     erubis (2.7.0)
     git (1.2.5)
@@ -49,6 +51,12 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     mocha (0.9.12)
+    mongo (1.3.1)
+      bson (>= 1.3.1)
+    mongoid (2.2.0)
+      activemodel (~> 3.0)
+      mongo (~> 1.3)
+      tzinfo (~> 0.3.22)
     multi_json (1.0.3)
     polyglot (0.3.2)
     rack (1.3.2)
@@ -99,10 +107,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext
   bundler (~> 1.0.0)
   haml
   jeweler (~> 1.6.0)
   mocha
+  mongoid (>= 2.0.0.beta.19)
   rails (= 3.1.0)
   rake (= 0.8.7)
   rcov

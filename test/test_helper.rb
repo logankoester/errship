@@ -17,5 +17,5 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 # Run the tests for the sandbox (dummy) application
 ENV['RAILS_ENV'] = 'test'
-require 'active_record_sandbox/config/environment'
+require 'sandbox/config/environment'
 require 'rails/test_help'
