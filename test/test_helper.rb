@@ -9,6 +9,7 @@ rescue Bundler::BundlerError => e
 end
 require 'test/unit'
 require 'shoulda'
+require 'mocha'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
@@ -16,5 +17,5 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 # Run the tests for the sandbox (dummy) application
 ENV['RAILS_ENV'] = 'test'
-require 'sandbox/config/environment'
+require 'active_record_sandbox/config/environment'
 require 'rails/test_help'
