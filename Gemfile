@@ -17,6 +17,10 @@ group :test do
   gem 'rails', '3.1.0'
   gem 'sqlite3-ruby'
   gem 'turn'
+  gem 'mocha', :require => false
+  gem 'mongoid'
+  gem 'mongo_mapper'
+  gem 'bson_ext'
 end
 
 gem 'haml'

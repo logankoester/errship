@@ -1,0 +1,10 @@
+defaults: &defaults
+  host: localhost
+
+development:
+  <<: *defaults
+  database: mongoid_sandbox_development
+
+test:
+  <<: *defaults
+  database: mongoid_sandbox_test
