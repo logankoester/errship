@@ -15,7 +15,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "errship"
-  gem.homepage = "http://github.com/logankoester/errship"
+  gem.homepage = "https://github.com/agoragames/errship"
   gem.license = "MIT"
   gem.summary = %Q{Errship is a Rails 3.1 engine for rendering error pages inside your layout.}
   gem.description = %Q{Errship is a Rails 3.1 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.}

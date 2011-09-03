@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Logan Koester}, %q{Matthew Wilson}, %q{David Czarnecki}]
-  s.date = %q{2011-09-02}
+  s.date = %q{2011-09-03}
   s.description = %q{Errship is a Rails 3.1 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.}
   s.email = [%q{lkoester@agoragames.com}, %q{mwilson@agoragames.com}, %q{dczarnecki@agoragames.com}]
   s.extra_rdoc_files = [
@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
     "lib/rescuers/mongo_mapper.rb",
     "lib/rescuers/mongoid.rb"
   ]
-  s.homepage = %q{http://github.com/logankoester/errship}
+  s.homepage = %q{https://github.com/agoragames/errship}
   s.licenses = [%q{MIT}]
   s.require_paths = [%q{lib}]
   s.rubygems_version = %q{1.8.6}
