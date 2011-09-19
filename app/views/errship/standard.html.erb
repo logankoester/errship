@@ -1,0 +1,14 @@
+<% content_for :head do %>
+<%= stylesheet_link_tag 'errship', :media => 'screen, projection' %>
+<% end %>
+
+<div class='errship'>
+  <h1 class='error_code'><%= status_code %></h1>
+  <% if errship_scope %>
+  <h2><%= t "errship.#{status_code}.#{errship_scope}.title" %></h2>
+  <p><%= t "errship.#{status_code}.#{errship_scope}.description" %></p>
+  <% else %>
+  <h2><%= t "errship.#{status_code}.title" %></h2>
+  <p><%= t "errship.#{status_code}.description" %></p>
+  <% end %>
+</div>
