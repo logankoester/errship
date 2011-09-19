@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{errship}
-  s.version = "2.0.1"
+  s.version = "2.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Logan Koester}, %q{Matthew Wilson}, %q{David Czarnecki}]
+  s.authors = ["Logan Koester", "Matthew Wilson", "David Czarnecki"]
   s.date = %q{2011-09-19}
   s.description = %q{Errship is a Rails 3.1 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.}
-  s.email = [%q{lkoester@agoragames.com}, %q{mwilson@agoragames.com}, %q{dczarnecki@agoragames.com}]
+  s.email = ["lkoester@agoragames.com", "mwilson@agoragames.com", "dczarnecki@agoragames.com"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
   s.files = [
     "app/assets/javascripts/application.js",
     "app/assets/stylesheets/errship.css",
-    "app/views/errship/standard.html.erb",
     "app/views/errship/standard.html.haml",
     "config/locales/en.yml",
     "config/routes.rb",
@@ -29,9 +28,9 @@ Gem::Specification.new do |s|
     "lib/rescuers/mongoid.rb"
   ]
   s.homepage = %q{https://github.com/agoragames/errship}
-  s.licenses = [%q{MIT}]
-  s.require_paths = [%q{lib}]
-  s.rubygems_version = %q{1.8.9}
+  s.licenses = ["MIT"]
+  s.require_paths = ["lib"]
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{Errship is a Rails 3.1 engine for rendering error pages inside your layout.}
 
   if s.respond_to? :specification_version then
@@ -43,14 +42,12 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.0"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_development_dependency(%q<haml>, [">= 0"])
     else
       s.add_dependency(%q<rake>, ["= 0.8.7"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.0"])
       s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<haml>, [">= 0"])
     end
   else
     s.add_dependency(%q<rake>, ["= 0.8.7"])
@@ -58,7 +55,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.0"])
     s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<haml>, [">= 0"])
   end
 end
 
