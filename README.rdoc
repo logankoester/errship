@@ -90,6 +90,9 @@ The following methods are provided:
 If Airbrake is installed, every rescuer will report the exception, except for 404.
 
 == Changelog
+2.1.0
+  - Removes unnecessary dependency on HAML (using ERB instead)
+
 2.0.1
   - Added tests for ActiveRecord, Mongoid and MongoMapper rescuers
   - Fixed Mongoid module
