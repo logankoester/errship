@@ -1,4 +1,7 @@
-require 'haml'
+begin
+  require 'haml'
+rescue LoadError
+end
 require 'rescuers/active_record'
 require 'rescuers/mongoid'
 require 'rescuers/mongo_mapper'
