@@ -90,6 +90,13 @@ The following methods are provided:
 If Airbrake is installed, every rescuer will report the exception, except for 404.
 
 == Changelog
+
+2.1.2
+  - Remove explicit Rake version dependency for 1.8.7 compatibility 
+  
+2.1.1
+  - Gemspec update
+  
 2.1.0
   - Removes unnecessary dependency on HAML (using ERB instead)
 
