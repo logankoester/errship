@@ -22,7 +22,7 @@ the flash message anyway.
 == Installation
 
 Add this to your Gemfile
-    gem 'errship', '1.0.0'
+    gem 'errship', '~> 2.1.1'
 
 Add this to your ApplicationController
     class ApplicationController < ActionController::Base
