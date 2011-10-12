@@ -2,6 +2,6 @@ class HumansController < ApplicationController
   include Errship::MongoMapper::Rescuers
 
   def index
-    raise MongoMapper::DocumentNotFound
+    raise MongoMapper::DocumentNotFound.new
   end
 end
