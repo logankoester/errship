@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{errship}
-  s.version = "2.1.2"
+  s.name = "errship"
+  s.version = "2.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Logan Koester}, %q{Matthew Wilson}, %q{David Czarnecki}]
-  s.date = %q{2011-09-27}
-  s.description = %q{Errship is a Rails 3.1 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.}
-  s.email = [%q{lkoester@agoragames.com}, %q{mwilson@agoragames.com}, %q{dczarnecki@agoragames.com}]
+  s.authors = ["Logan Koester", "Matthew Wilson", "David Czarnecki"]
+  s.date = "2011-10-12"
+  s.description = "Errship is a Rails 3.1 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking."
+  s.email = ["lkoester@agoragames.com", "mwilson@agoragames.com", "dczarnecki@agoragames.com"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -27,11 +27,11 @@ Gem::Specification.new do |s|
     "lib/rescuers/mongo_mapper.rb",
     "lib/rescuers/mongoid.rb"
   ]
-  s.homepage = %q{https://github.com/agoragames/errship}
-  s.licenses = [%q{MIT}]
-  s.require_paths = [%q{lib}]
-  s.rubygems_version = %q{1.8.8}
-  s.summary = %q{Errship is a Rails 3.1 engine for rendering error pages inside your layout.}
+  s.homepage = "https://github.com/agoragames/errship"
+  s.licenses = ["MIT"]
+  s.require_paths = ["lib"]
+  s.rubygems_version = "1.8.11"
+  s.summary = "Errship is a Rails 3.1 engine for rendering error pages inside your layout."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
