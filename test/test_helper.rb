@@ -14,6 +14,8 @@ require 'mocha'
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
+require 'mongoid'
+require 'mongo_mapper'
 
 # Run the tests for the sandbox (dummy) application
 ENV['RAILS_ENV'] = 'test'
