@@ -101,6 +101,9 @@ If Airbrake is installed, every rescuer will report the exception, except for 40
 
 == Changelog
 
+2.2.0
+  - Preserve correct status codes by default (Rescuers no longer force a 200 status)
+
 2.1.3
   - Conditionally loading rescuers to check for specific loading ORM
   
