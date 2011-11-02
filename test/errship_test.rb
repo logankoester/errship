@@ -21,5 +21,13 @@ class ErrshipIntegrationTest < ActionController::IntegrationTest
   test "/any_nonexistant_route is routed to errship's 404 page" do
     get '/any_nonexistant_route'
     assert_routing '/error', { :controller => 'application', :action => 'errship_standard' }
+    assert_response :success
   end
+  
+  test "errship's 404 page has a 404 status code if configured so" do
+    Errship.status_code_success = false
+    get '/any_nonexistant_route'
+    assert_response :missing
+  end
+
 end

@@ -8,6 +8,9 @@ module Errship
     paths['app/views']      << 'app/views'
     paths['config/locales'] << 'config/locales'
   end
+  
+  mattr_accessor :status_code_success
+  @@status_code_success = true
 
   module Rescuers
     def self.included(base)
@@ -21,12 +24,12 @@ module Errship
     def render_error(exception, errship_scope = false)
       airbrake_class.send(:notify, exception) if airbrake_class
       render :template => '/errship/standard', :locals => {
-        :status_code => 500, :errship_scope => errship_scope }
+        :status_code => 500, :errship_scope => errship_scope }, :status => (Errship.status_code_success ? 200 : 500)
     end
 
     def render_404_error(exception = nil, errship_scope = false)
       render :template => '/errship/standard', :locals => {
-        :status_code => 404, :errship_scope => errship_scope }
+        :status_code => 404, :errship_scope => errship_scope }, :status => (Errship.status_code_success ? 200 : 404)
     end
 
     # A blank page with just the layout and flash message, which can be redirected to when

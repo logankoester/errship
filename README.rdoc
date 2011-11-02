@@ -38,6 +38,16 @@ when you want useful debugging output again instead!
 
 Alternatively, simply point your browser to /error or /not_found to get a taste.
 
+== Configuration
+
+Errship renders all error pages with a HTTP status of 200 by default. This is
+done to ensure that the error page is rendered if the web server is configured
+to intercept errors (e.g. proxy_intercept_errors for nginx). If you want to
+have the correct status codes for your errors, add the following to an
+initializer:
+
+    Errship.status_code_success = false
+
 == I18n
 
 If you want to edit the text that is rendered, add the following to your config/locales/*.yml
