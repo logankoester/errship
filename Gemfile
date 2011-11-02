@@ -14,7 +14,7 @@ group :development do
 end
 
 group :test do
-  gem 'rails', '3.1.0'
+  gem 'rails', '3.1.1'
   gem 'sqlite3-ruby'
   gem 'mocha', :require => false
   gem 'mongoid'
