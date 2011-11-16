@@ -23,21 +23,27 @@ module Errship
 
     def render_error(exception, errship_scope = false)
       airbrake_class.send(:notify, exception) if airbrake_class
-      render :template => '/errship/standard', :locals => {
-        :status_code => 500, :errship_scope => errship_scope }, :status => (Errship.status_code_success ? 200 : 500)
+      render :template => '/errship/standard.html.erb',
+             :layout   => 'application',
+             :locals   => { :status_code => 500, :errship_scope => errship_scope },
+             :status   => (Errship.status_code_success ? 200 : 500)
     end
 
     def render_404_error(exception = nil, errship_scope = false)
-      render :template => '/errship/standard', :locals => {
-        :status_code => 404, :errship_scope => errship_scope }, :status => (Errship.status_code_success ? 200 : 404)
+      render :template => '/errship/standard.html.erb',
+             :layout   => 'application',
+             :locals   => { :status_code => 404, :errship_scope => errship_scope },
+             :status   => (Errship.status_code_success ? 200 : 404)
     end
 
     # A blank page with just the layout and flash message, which can be redirected to when
     # all else fails.
     def errship_standard(errship_scope = false)
       flash[:error] ||= 'An unknown error has occurred, or you have reached this page by mistake.'
-      render :template => '/errship/standard', :locals => {
-        :status_code => 500, :errship_scope => errship_scope }
+      render :template => '/errship/standard.html.erb',
+             :layout   => 'application',
+             :locals   => { :status_code => 500, :errship_scope => errship_scope },
+             :status   => (Errship.status_code_success ? 200 : 500)
     end
 
     # Set the error flash and attempt to redirect back. If RedirectBackError is raised,
