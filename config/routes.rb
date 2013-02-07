@@ -5,6 +5,10 @@ if defined?(Rails::Application)
     match '/not_found' => "application#render_404_error", :as => 'not_found'
 
     # Rails currently (until 3.1) ignores rescue_from ActionController::RoutingError, so render 404 manually
-    match '*address' => 'application#render_404_error' unless Rails.application.config.consider_all_requests_local
+    unless Rails.application.config.consider_all_requests_local
+      match '*address' => 'application#render_404_error', :constraints => lambda { |req|
+        !req.path.starts_with?('/users/auth/')
+      }
+    end
   end
 end
