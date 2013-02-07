@@ -1,5 +1,6 @@
 en:
   errship:
+    standard: 'An unknown error has occurred, or you have reached this page by mistake.'
     '404':
       title: 'This page does not exist.'
       description: 'It could have moved, or someone (maybe you!) mistyped the URL.'
