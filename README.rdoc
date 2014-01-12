@@ -16,7 +16,7 @@ Errship is a Rails 3.1 engine for rendering error pages inside your layout. It s
 i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.
 
 You can also use the flashback method to set an error message and redirect :back safely - if
-a RedirectBackError is raised, the user is dropped off at the nearest error page and given 
+a RedirectBackError is raised, the user is dropped off at the nearest error page and given
 the flash message anyway.
 
 == Installation
@@ -89,7 +89,7 @@ and then add your text for that scope to config/locales/*.yml
           monkeys:
             title: 'They must have escaped'
             description: 'This is now a monkey free zone.'
-            
+
 
 The following methods are provided:
 
@@ -106,25 +106,25 @@ If Airbrake is installed, every rescuer will report the exception, except for 40
 
 2.1.3
   - Conditionally loading rescuers to check for specific loading ORM
-  
+
 2.1.2
-  - Remove explicit Rake version dependency for 1.8.7 compatibility 
-  
+  - Remove explicit Rake version dependency for 1.8.7 compatibility
+
 2.1.1
   - Gemspec update
-  
+
 2.1.0
   - Removes unnecessary dependency on HAML (using ERB instead)
 
 2.0.1
   - Added tests for ActiveRecord, Mongoid and MongoMapper rescuers
   - Fixed Mongoid module
-   
+
 2.0.0
   - Breaks out ORM error handling into submodules. Not backwards compatible.
 
 1.1.0
-  - Adds option to specify a custom errship_scope to use with I18n, allowing each 
+  - Adds option to specify a custom errship_scope to use with I18n, allowing each
     rescuer to customize the messages displayed.
 
 1.0.0
@@ -135,7 +135,7 @@ If Airbrake is installed, every rescuer will report the exception, except for 40
   - No default styles - blends seamlessly into its host layout.
 
 == Contributing to errship
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
@@ -146,6 +146,6 @@ If Airbrake is installed, every rescuer will report the exception, except for 40
 
 == Copyright
 
-Copyright (c) 2011 Logan Koester. See LICENSE.txt for
+Copyright (c) 2011-2014 Logan Koester. See LICENSE.txt for
 further details.
 
