@@ -8,7 +8,7 @@ module Errship
     paths['app/views']      << 'app/views'
     paths['config/locales'] << 'config/locales'
   end
-  
+
   mattr_accessor :status_code_success
   @@status_code_success = true
 
@@ -17,7 +17,7 @@ module Errship
       unless Rails.application.config.consider_all_requests_local
         base.rescue_from ActionController::RoutingError, :with => :render_404_error
         base.rescue_from ActionController::UnknownController, :with => :render_404_error
-        base.rescue_from ActionController::UnknownAction, :with => :render_404_error
+        base.rescue_from ::AbstractController::ActionNotFound, :with => :render_404_error
       end
     end
 
